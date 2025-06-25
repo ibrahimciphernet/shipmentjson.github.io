@@ -1,0 +1,184 @@
+{
+    "ZX1001ABC": {
+        "package_description": "Furniture Set",
+        "origin": "Berlin, Germany",
+        "destination": "Toronto, Canada",
+        "Weight": "75 kg",
+        "Dimensions": "120cm x 80cm x 60cm",
+        "Contents": "Flat-packed wooden furniture",
+        "Shipping_cost": "€1290",
+        "Total_Paid": "€1290",
+        "estimated_delivery": "2025-07-08",
+        "current_location": "Montreal, Canada",
+        "notes": "Final leg of delivery",
+        "progress": [
+            {"status": "Dispatched", "date": "2025-06-18", "location": "Berlin, Germany"},
+            {"status": "In Transit", "date": "2025-06-20", "location": "Frankfurt, Germany"},
+            {"status": "In Transit", "date": "2025-06-22", "location": "Toronto, Canada"},
+            {"status": "In Transit", "date": "2025-06-23", "location": "Montreal, Canada"}
+        ]
+    },
+    "CN9988JKL": {
+        "package_description": "Medical Equipment",
+        "origin": "Seoul, South Korea",
+        "destination": "Houston, USA",
+        "Weight": "40 kg",
+        "Dimensions": "70cm x 50cm x 40cm",
+        "Contents": "Diagnostic tools",
+        "Shipping_cost": "$3220",
+        "Total_Paid": "$3220",
+        "estimated_delivery": "2025-07-04",
+        "current_location": "San Francisco, USA",
+        "notes": "Awaiting inspection",
+        "progress": [
+            {"status": "Dispatched", "date": "2025-06-19", "location": "Seoul, South Korea"},
+            {"status": "In Transit", "date": "2025-06-21", "location": "Tokyo, Japan"},
+            {"status": "At Customs", "date": "2025-06-23", "location": "San Francisco, USA"}
+        ]
+    },
+    "PK2025TRK": {
+        "package_description": "Clothing and Accessories",
+        "origin": "Istanbul, Turkey",
+        "destination": "Paris, France",
+        "Weight": "10 kg",
+        "Dimensions": "50cm x 40cm x 20cm",
+        "Contents": "Retail shipment",
+        "Shipping_cost": "€210",
+        "Total_Paid": "€210",
+        "estimated_delivery": "2025-06-30",
+        "current_location": "Lyon, France",
+        "notes": "On truck for final delivery",
+        "progress": [
+            {"status": "Dispatched", "date": "2025-06-20", "location": "Istanbul, Turkey"},
+            {"status": "In Transit", "date": "2025-06-21", "location": "Athens, Greece"},
+            {"status": "In Transit", "date": "2025-06-23", "location": "Lyon, France"}
+        ]
+    },
+    "MX555XYZ": {
+        "package_description": "Automotive Parts",
+        "origin": "Detroit, USA",
+        "destination": "Mexico City, Mexico",
+        "Weight": "28 kg",
+        "Dimensions": "60cm x 50cm x 35cm",
+        "Contents": "Engine components",
+        "Shipping_cost": "$480",
+        "Total_Paid": "$480",
+        "estimated_delivery": "2025-07-02",
+        "current_location": "Monterrey, Mexico",
+        "notes": "Customs cleared, en route",
+        "progress": [
+            {"status": "Dispatched", "date": "2025-06-22", "location": "Detroit, USA"},
+            {"status": "In Transit", "date": "2025-06-24", "location": "Dallas, USA"},
+            {"status": "In Transit", "date": "2025-06-25", "location": "Monterrey, Mexico"}
+        ]
+    },
+    "JP777AIR": {
+        "package_description": "Camera Equipment",
+        "origin": "Osaka, Japan",
+        "destination": "Los Angeles, USA",
+        "Weight": "5 kg",
+        "Dimensions": "40cm x 30cm x 20cm",
+        "Contents": "DSLR and accessories",
+        "Shipping_cost": "$220",
+        "Total_Paid": "$220",
+        "estimated_delivery": "2025-07-01",
+        "current_location": "Los Angeles, USA",
+        "notes": "Out for delivery",
+        "progress": [
+            {"status": "Dispatched", "date": "2025-06-20", "location": "Osaka, Japan"},
+            {"status": "In Transit", "date": "2025-06-21", "location": "Honolulu, USA"},
+            {"status": "At Customs", "date": "2025-06-23", "location": "Los Angeles, USA"},
+            {"status": "In Transit", "date": "2025-06-24", "location": "Los Angeles, USA"}
+        ]
+    },
+    "FR333BOX": {
+        "package_description": "Wine Bottles",
+        "origin": "Bordeaux, France",
+        "destination": "Rome, Italy",
+        "Weight": "15 kg",
+        "Dimensions": "40cm x 40cm x 40cm",
+        "Contents": "Red wine collection",
+        "Shipping_cost": "€150",
+        "Total_Paid": "€150",
+        "estimated_delivery": "2025-06-29",
+        "current_location": "Florence, Italy",
+        "notes": "Handle with care",
+        "progress": [
+            {"status": "Dispatched", "date": "2025-06-19", "location": "Bordeaux, France"},
+            {"status": "In Transit", "date": "2025-06-21", "location": "Milan, Italy"},
+            {"status": "In Transit", "date": "2025-06-22", "location": "Florence, Italy"}
+        ]
+    },
+    "AU6000SEA": {
+        "package_description": "Surfboard Shipment",
+        "origin": "Gold Coast, Australia",
+        "destination": "Honolulu, USA",
+        "Weight": "12 kg",
+        "Dimensions": "200cm x 50cm x 10cm",
+        "Contents": "Custom surfboard",
+        "Shipping_cost": "$370",
+        "Total_Paid": "$370",
+        "estimated_delivery": "2025-07-03",
+        "current_location": "Honolulu, USA",
+        "notes": "Delivered to local depot",
+        "progress": [
+            {"status": "Dispatched", "date": "2025-06-18", "location": "Gold Coast, Australia"},
+            {"status": "In Transit", "date": "2025-06-21", "location": "Auckland, NZ"},
+            {"status": "In Transit", "date": "2025-06-24", "location": "Honolulu, USA"}
+        ]
+    },
+    "IN4312MED": {
+        "package_description": "Pharmaceutical Samples",
+        "origin": "Mumbai, India",
+        "destination": "Zurich, Switzerland",
+        "Weight": "8 kg",
+        "Dimensions": "30cm x 30cm x 20cm",
+        "Contents": "Medical vials",
+        "Shipping_cost": "€430",
+        "Total_Paid": "€430",
+        "estimated_delivery": "2025-06-28",
+        "current_location": "Zurich, Switzerland",
+        "notes": "Cold chain maintained",
+        "progress": [
+            {"status": "Dispatched", "date": "2025-06-19", "location": "Mumbai, India"},
+            {"status": "In Transit", "date": "2025-06-21", "location": "Doha, Qatar"},
+            {"status": "At Customs", "date": "2025-06-24", "location": "Zurich, Switzerland"}
+        ]
+    },
+    "RU0909POL": {
+        "package_description": "Scientific Instruments",
+        "origin": "Moscow, Russia",
+        "destination": "Warsaw, Poland",
+        "Weight": "18 kg",
+        "Dimensions": "60cm x 50cm x 30cm",
+        "Contents": "Lab tools",
+        "Shipping_cost": "€540",
+        "Total_Paid": "€540",
+        "estimated_delivery": "2025-06-30",
+        "current_location": "Warsaw, Poland",
+        "notes": "Delivered",
+        "progress": [
+            {"status": "Dispatched", "date": "2025-06-18", "location": "Moscow, Russia"},
+            {"status": "In Transit", "date": "2025-06-20", "location": "Minsk, Belarus"},
+            {"status": "Delivered", "date": "2025-06-25", "location": "Warsaw, Poland"}
+        ]
+    },
+    "BR8494TOY": {
+        "package_description": "Toys & Games",
+        "origin": "São Paulo, Brazil",
+        "destination": "Madrid, Spain",
+        "Weight": "13 kg",
+        "Dimensions": "50cm x 50cm x 30cm",
+        "Contents": "Assorted toys",
+        "Shipping_cost": "€290",
+        "Total_Paid": "€290",
+        "estimated_delivery": "2025-07-07",
+        "current_location": "Lisbon, Portugal",
+        "notes": "Weather delay",
+        "progress": [
+            {"status": "Dispatched", "date": "2025-06-19", "location": "São Paulo, Brazil"},
+            {"status": "In Transit", "date": "2025-06-21", "location": "Lisbon, Portugal"},
+            {"status": "In Transit", "date": "2025-06-23", "location": "Madrid, Spain"}
+        ]
+    }
+}

@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahel cargo network</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" sizes="36x36" href="./assets/4.png" type="image/x-icon">
+</head>
+<style>
+    /* Page Container Styles */
+    .page-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .page-header h2 {
+        font-size: 3.5rem;
+        color: #1e293b;
+        margin-bottom: 15px;
+    }
+
+    .page-header p {
+        font-size: 1.3rem;
+        color: #64748b;
+    }
+
+    /* Help Center Styles */
+    .help-categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    .help-category {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .help-category h3 {
+        color: #2563eb;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .help-category ul {
+        list-style: none;
+    }
+
+    .help-category li {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .help-category li:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .help-category a {
+        color: #334155;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .help-category a:hover {
+        color: #2563eb;
+    }
+
+    .support-contact {
+        text-align: center;
+        background: #eff6ff;
+        padding: 40px;
+        border-radius: 15px;
+    }
+
+    .support-contact h3 {
+        margin-bottom: 15px;
+        color: #1e293b;
+    }
+
+    .support-contact p {
+        margin-bottom: 20px;
+        color: #64748b;
+    }
+
+    /* FAQ Styles */
+    .faq-accordion {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .faq-item {
+        margin-bottom: 15px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-question {
+        width: 100%;
+        padding: 20px;
+        text-align: left;
+        background: white;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #1e293b;
+    }
+
+    .faq-question:hover {
+        background: #f8fafc;
+    }
+
+    .faq-answer {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        background: white;
+    }
+
+    .faq-answer p,
+    .faq-answer ul,
+    .faq-answer ol {
+        margin-bottom: 20px;
+    }
+
+    .faq-answer ul,
+    .faq-answer ol {
+        padding-left: 20px;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 20px;
+        max-height: 1000px;
+    }
+
+    /* Terms and Privacy Styles */
+    .terms-section,
+    .privacy-section {
+        margin-bottom: 40px;
+    }
+
+    .terms-section h3,
+    .privacy-section h3 {
+        color: #1e293b;
+        margin-bottom: 15px;
+        font-size: 1.9rem;
+    }
+
+    .terms-section p,
+    .privacy-section p {
+        margin-bottom: 15px;
+        color: #334155;
+        line-height: 1.7;
+        font-size: 20px;
+    }
+
+    .terms-section ul,
+    .privacy-section ul {
+        margin-bottom: 15px;
+        padding-left: 20px;
+    }
+
+    .terms-section li,
+    .privacy-section li {
+        margin-bottom: 8px;
+        color: #334155;
+    }
+
+    address {
+        font-style: normal;
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 15px;
+    }
+
+
+    /* ============================= */
+
+    /* Stats Bar */
+.stats-bar {
+    display: grid;
+    border-radius: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    background: #2563eb;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 20px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Features Section */
+.features-section {
+    padding: 80px 20px;
+    background: #f8fafc;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #64748b;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #2563eb;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #64748b;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.feature-benefits {
+    list-style: none;
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+.feature-benefits li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-benefits li:before {
+    content: "✓";
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 80px 30px;
+    background: white;
+    border-radius: 40px;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
+    /* position: relative; */
+}
+
+.steps-container:before {
+    /* content: ''; */
+    /* position: absolute; */
+    /* top: 0;
+    left: 40px; */
+    height: 100%;
+    width: 2px;
+    background: #e2e8f0;
+    z-index: 1;
+}
+
+.step1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content {
+    padding-top: 15px;
+}
+
+.step-content h3 {
+    font-size: 1.3rem;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.step-content p {
+    color: #64748b;
+    line-height: 1.6;
+    width: 300px;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 80px 20px;
+    background: #f8fafc;
+}
+
+.testimonial-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.testimonial-content {
+    margin-bottom: 25px;
+}
+
+.rating {
+    color: #f59e0b;
+    margin-bottom: 15px;
+}
+
+.testimonial-content p {
+    color: #475569;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-author h4 {
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+.testimonial-author span {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Partners */
+.partners {
+    padding: 60px 20px;
+    background: white;
+}
+
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.partner-logos img {
+    height: 60px;
+    width: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.partner-logos img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #2563eb;
+}
+
+/* Animation for Stats */
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-number {
+    animation: countUp 1s ease forwards;
+} */
+</style>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img width="230" height="230" src="./assets/4.png" alt="shiptracker">
+            </div>
+            <ul class="nav-menu ">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-section="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tracking" class="nav-link" data-section="tracking">Track Package</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#faq" class="nav-link" data-section="faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#help" class="nav-link" data-section="help">Help Center</a>
+                </li>
+            </ul>
+            <a style="color: #ffffff;" href="#contact" class="btn btn-primary text-white" data-section="contact">Contact
+                Us</a>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <!-- <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Track Your Shipments</h1>
+                    <p class="hero-subtitle">Get real-time updates on your package delivery status with our advanced
+                        tracking system</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showSection('tracking')">Start Tracking</button>
+                        <button class="btn btn-secondary" onclick="showSection('contact')">Learn More</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="shipping-animation">
+                        <div class="truck">🚚</div>
+                        <div class="package">📦</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Real-time Tracking</h3>
+                    <p>Monitor your package location and status updates in real-time</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Coverage</h3>
+                    <p>Track shipments worldwide with our comprehensive network</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access tracking information from any device, anywhere</p>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <!-- Hero Section with Background Image -->
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Sahel Global Shipping & Logistics Solutions</h1>
+                    <p class="hero-subtitle">Real-time tracking, reliable delivery, and complete supply chain visibility
+                        across 150+ countries</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showSection('tracking')">Track Your Shipment</button>
+                        <button style="background-color: #fff; color: #2563eb;" class="btn btn-secondary" onclick="showSection('contact')">Get a Quote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-label">Countries Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="98.7">0</div>
+                    <div class="stat-label">On-Time Delivery Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="50000">0</div>
+                    <div class="stat-label">Daily Shipments</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+
+            <!-- Core Features -->
+            <div class="features-section">
+                <div class="section-header">
+                    <h2>Our Shipping Solutions</h2>
+                    <p>Comprehensive logistics services tailored to your business needs</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Express Shipping</h3>
+                        <p>Guaranteed next-day and 2-day delivery options for time-sensitive shipments with real-time
+                            tracking.</p>
+                        <ul class="feature-benefits">
+                            <li>Door-to-door service</li>
+                            <li>Customs clearance included</li>
+                            <li>Signature confirmation</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>International Shipping</h3>
+                        <p>Seamless cross-border logistics with competitive rates and complete documentation handling.
+                        </p>
+                        <ul class="feature-benefits">
+                            <li>DDU and DDP options</li>
+                            <li>Dedicated customs brokers</li>
+                            <li>Duty/tax calculation</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-pallet"></i>
+                        </div>
+                        <h3>Freight Services</h3>
+                        <p>Full truckload (FTL) and less-than-truckload (LTL) solutions for commercial shipments.</p>
+                        <ul class="feature-benefits">
+                            <li>Temperature-controlled options</li>
+                            <li>Dangerous goods handling</li>
+                            <li>White glove delivery</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <h3>Fulfillment Services</h3>
+                        <p>Complete inventory management, pick & pack, and returns processing for e-commerce businesses.
+                        </p>
+                        <ul class="feature-benefits">
+                            <li>30-day free storage</li>
+                            <li>Integration with major platforms</li>
+                            <li>Kitting and assembly</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="how-it-works">
+                <div class="section-header">
+                    <h2>Simple Shipping Process</h2>
+                    <p>Get your packages moving in just a few easy steps</p>
+                </div>
+
+                <div class="steps-container">
+                    <!-- <div class="step1">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Create Shipment</h3>
+                            <p>Enter your shipment details online or through our mobile app. Get instant rate quotes.
+                            </p>
+                        </div>
+                    </div> -->
+
+                    <div class="step1">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Create &<br> Schedule Pickup</h3>
+                            <p>Choose a pickup time that works for you or drop off at one of our 5,000+ locations.</p>
+                        </div>
+                    </div>
+
+                    <div class="step1">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Track in<br> Real-Time</h3>
+                            <p>Monitor your shipment's progress with GPS-enabled tracking and status updates.</p>
+                        </div>
+                    </div>
+
+                    <div class="step1">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Delivery <br>Confirmation</h3>
+                            <p>Receive proof of delivery with signature and photo confirmation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="testimonials">
+                <div class="section-header">
+                    <h2>Trusted by Businesses Worldwide</h2>
+                    <p>What our customers say about our services</p>
+                </div>
+
+                <div class="testimonial-slider">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Sahel Cargo Network transformed our international shipping. Their customs clearance is
+                                the fastest we've experienced, saving us days in transit time."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <span>COO, TechGadgets Inc.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"The real-time tracking gives us complete visibility of our high-value shipments. We've
+                                reduced customer inquiries by 40% since switching to Sahel."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                            <div>
+                                <h4>Michael Chen</h4>
+                                <span>Logistics Manager, PharmaCorp</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p>"Their fulfillment services allowed us to scale our e-commerce business without investing
+                                in warehouse space. Highly recommended!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
+                            <div>
+                                <h4>Emma Rodriguez</h4>
+                                <span>Founder, BoutiqueFinds</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partners -->
+            <div class="partners">
+                <div class="section-header">
+                    <h2>Our Trusted Partners</h2>
+                    <p>Collaborating with industry leaders to deliver excellence</p>
+                </div>
+
+                <div class="partner-logos">
+                    <img src="https://via.placeholder.com/150x60?text=FedEx" alt="FedEx">
+                    <img src="https://via.placeholder.com/150x60?text=DHL" alt="DHL">
+                    <img src="https://via.placeholder.com/150x60?text=UPS" alt="UPS">
+                    <img src="https://via.placeholder.com/150x60?text=Maersk" alt="Maersk">
+                    <img src="https://via.placeholder.com/150x60?text=Amazon" alt="Amazon">
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Ship?</h2>
+                    <p>Get a free quote today and experience world-class logistics services</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="showSection('contact')">Request Quote</button>
+                        <button class="btn btn-secondary">Call Us: +1 (800) 555-SHIP</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tracking Section -->
+        <section style="margin-top: 50px;" id="tracking" class="section">
+            <div class="tracking-container">
+                <div class="tracking-header">
+                    <h2>Track Your Package</h2>
+                    <p>Enter your tracking code to get the latest updates</p>
+                </div>
+
+                <div class="tracking-form">
+                    <div class="input-group">
+                        <input type="text" id="trackingInput" placeholder="Enter tracking code (e.g., Bu7890XYpp)"
+                            class="tracking-input">
+                        <button style="background-color: #ff5c02; color: #fff;" id="trackButton" class="btn btn-">Track
+                            Package</button>
+                    </div>
+                    <div class="sample-codes">
+                        <p>Try sample codes:
+                            <span class="sample-code" onclick="trackSample('TRACK123')">TRACK123</span> or
+                            <span class="sample-code" onclick="trackSample('TRACK456')">TRACK456</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="trackingResult" class="tracking-result hidden">
+                    <div id="errorMessage" class="error-message hidden">
+                        <span class="error-icon">❌</span>
+                        <span id="errorText"></span>
+                    </div>
+
+                    <div id="packageDetails" class="package-details hidden">
+                        <h3>🚚 Shipping Details</h3>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Description:</span>
+                                <span id="packageDescription" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Origin:</span>
+                                <span id="packageOrigin" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Destination:</span>
+                                <span id="packageDestination" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Estimated Delivery:</span>
+                                <span id="packageDelivery" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Current Location:</span>
+                                <span id="packageLocation" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Notes:</span>
+                                <span id="packageNotes" class="detail-value"></span>
+                            </div>
+                        </div>
+                        <h3 style="margin-top: 30px;">📋 Package Details</h3>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Weight:</span>
+                                <span id="packageWeight" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Dimensions:</span>
+                                <span id="packageDimensions" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Contents:</span>
+                                <span id="packageContents" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Shipping Cost:</span>
+                                <span id="packageShippingCost" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Total Paid:</span>
+                                <span id="packageTotalPaid" class="detail-value"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="progressSection" class="progress-section hidden">
+                        <h3>🚚 Shipment Progress</h3>
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                        <div class="progress-steps">
+                            <div class="step" data-step="0">
+                                <div class="step-circle"></div>
+                                <span class="step-label">Dispatched</span>
+                            </div>
+                            <div class="step" data-step="1">
+                                <div class="step-circle"></div>
+                                <span class="step-label">In Transit</span>
+                            </div>
+                            <div class="step" data-step="2">
+                                <div class="step-circle"></div>
+                                <span class="step-label">At Customs</span>
+                            </div>
+                            <div class="step" data-step="3">
+                                <div class="step-circle"></div>
+                                <span class="step-label">Out for Delivery</span>
+                            </div>
+                            <div class="step" data-step="4">
+                                <div class="step-circle"></div>
+                                <span class="step-label">Delivered</span>
+                            </div>
+                        </div>
+                        <!-- <div class="progress-steps">
+                            <div class="step" data-step="0">
+                                <div class="step-circle"></div>
+                                <span class="step-label">📦 Dispatched</span>
+                            </div>
+                            <div class="step" data-step="1">
+                                <div class="step-circle"></div>
+                                <span class="step-label">🚚 In Transit</span>
+                            </div>
+                            <div class="step" data-step="2">
+                                <div class="step-circle"></div>
+                                <span class="step-label">🛂 At Customs</span>
+                            </div>
+                            <div class="step" data-step="3">
+                                <div class="step-circle"></div>
+                                <span class="step-label">🏠 Out for Delivery</span>
+                            </div>
+                            <div class="step" data-step="4">
+                                <div class="step-circle"></div>
+                                <span class="step-label">✅ Delivered</span>
+                            </div>
+                        </div> -->
+
+                        <div class="tracking-history">
+                            <h4>📍 Tracking History</h4>
+                            <div id="historyList" class="history-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h2>Contact Us</h2>
+                    <p>Get in touch with our support team for any questions or assistance</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4>Email Support</h4>
+                                <p>support@shiptracker.com</p>
+                                <span>Response within 24 hours</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h4>Phone Support</h4>
+                                <p>+1 (555) 123-4567</p>
+                                <span>Mon-Fri, 9AM-6PM EST</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">💬</div>
+                            <div class="contact-details">
+                                <h4>Live Chat</h4>
+                                <p>Available 24/7</p>
+                                <span>Instant support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="tracking">Tracking Issues</option>
+                                    <option value="delivery">Delivery Problems</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="feedback">Feedback</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Center Section -->
+        <!-- Help Center Section -->
+        <section id="help" class="section">
+            <div class="page-container">
+                <div class="page-header">
+                    <h2>Help Center</h2>
+                    <p>Comprehensive support for all your shipping and tracking needs</p>
+                </div>
+                <div class="page-content">
+                    <div class="help-categories">
+                        <div class="help-category">
+                            <h3><i class="fas fa-box-open"></i> Shipping Services</h3>
+                            <ul>
+                                <li><a href="#">How to prepare your package for shipping</a></li>
+                                <li><a href="#">Domestic shipping options and rates</a></li>
+                                <li><a href="#">International shipping guidelines</a></li>
+                                <li><a href="#">Express vs standard shipping</a></li>
+                            </ul>
+                        </div>
+                        <div class="help-category">
+                            <h3><i class="fas fa-map-marked-alt"></i> Tracking Support</h3>
+                            <ul>
+                                <li><a href="#">Understanding tracking statuses</a></li>
+                                <li><a href="#">What to do if your package is delayed</a></li>
+                                <li><a href="#">Tracking multiple packages</a></li>
+                                <li><a href="#">Saving tracking numbers</a></li>
+                            </ul>
+                        </div>
+                        <div class="help-category">
+                            <h3><i class="fas fa-question-circle"></i> Account Help</h3>
+                            <ul>
+                                <li><a href="#">Creating and managing your account</a></li>
+                                <li><a href="#">Shipping history and records</a></li>
+                                <li><a href="#">Notification preferences</a></li>
+                                <li><a href="#">Two-factor authentication</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="support-contact">
+                        <h3>Need more help?</h3>
+                        <p>Our customer support team is available 24/7 to assist you with any questions or concerns.</p>
+                        <a href="#contact" class="btn btn-primary">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="page-container">
+                <div class="page-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Quick answers to our most common questions</p>
+                </div>
+                <div class="page-content">
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How do I track my package?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>You can track your package by entering your tracking number in the tracking section
+                                    of our website. Tracking numbers are typically provided when your shipment is
+                                    processed. If you don't have your tracking number, please contact the sender or
+                                    check your email for shipping confirmation.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What does "In Transit" mean?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>"In Transit" means your package is on its way to the destination. This status covers
+                                    the time from when the package leaves the origin facility until it arrives at the
+                                    destination facility. During this period, the package may be moving between
+                                    different transportation hubs.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Why hasn't my tracking information updated?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Tracking information may not update immediately due to several reasons:</p>
+                                <ul>
+                                    <li>The package hasn't been scanned at the next checkpoint</li>
+                                    <li>Technical delays in updating the tracking system</li>
+                                    <li>The package is in transit between facilities</li>
+                                    <li>International customs processing</li>
+                                </ul>
+                                <p>If it's been more than 48 hours without an update, please contact our support team.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What are your business hours for customer support?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Our customer support team is available:</p>
+                                <ul>
+                                    <li>Monday-Friday: 7:00 AM to 9:00 PM (EST)</li>
+                                    <li>Saturday: 8:00 AM to 6:00 PM (EST)</li>
+                                    <li>Sunday: 9:00 AM to 5:00 PM (EST)</li>
+                                </ul>
+                                <p>For urgent matters outside these hours, you can use our 24/7 emergency support line
+                                    at +1 (800) 555-0199.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How do I change the delivery address?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Address changes can be requested through your online account if the package hasn't
+                                    reached the final delivery station. For packages already out for delivery, address
+                                    changes may not be possible. Additional fees may apply for address changes. To
+                                    request an address change:</p>
+                                <ol>
+                                    <li>Log in to your account</li>
+                                    <li>Find the shipment in your dashboard</li>
+                                    <li>Click "Change Delivery"</li>
+                                    <li>Follow the prompts to enter the new address</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms of Service Section -->
+        <section id="terms" class="section">
+            <div class="page-container">
+                <div class="page-header">
+                    <h2>Terms of Service</h2>
+                    <p>Last Updated: January 1, 2023</p>
+                </div>
+                <div class="page-content">
+                    <div class="terms-section">
+                        <h3>1. Acceptance of Terms</h3>
+                        <p>By accessing or using the Sahel Cargo Network ("Service"), you agree to be bound by these
+                            Terms of Service ("Terms"). If you disagree with any part of the terms, you may not access
+                            the Service.</p>
+                    </div>
+                    <div class="terms-section">
+                        <h3>2. Description of Service</h3>
+                        <p>Sahel Cargo Network provides logistics and package tracking services, including but not
+                            limited to shipment booking, tracking, and delivery management ("Services").</p>
+                    </div>
+                    <div class="terms-section">
+                        <h3>3. User Responsibilities</h3>
+                        <p>You agree to:</p>
+                        <ul>
+                            <li>Provide accurate and complete information for all shipments</li>
+                            <li>Comply with all applicable laws and regulations</li>
+                            <li>Not ship prohibited or restricted items</li>
+                            <li>Pay all applicable fees and charges</li>
+                        </ul>
+                    </div>
+                    <div class="terms-section">
+                        <h3>4. Shipping Restrictions</h3>
+                        <p>The following items are strictly prohibited:</p>
+                        <ul>
+                            <li>Hazardous materials</li>
+                            <li>Illegal substances</li>
+                            <li>Perishable goods requiring refrigeration</li>
+                            <li>Live animals</li>
+                            <li>Currency and negotiable instruments</li>
+                        </ul>
+                    </div>
+                    <div class="terms-section">
+                        <h3>5. Liability Limitations</h3>
+                        <p>Our liability for loss or damage is limited to the lesser of:</p>
+                        <ul>
+                            <li>The actual value of the item</li>
+                            <li>$100 per shipment</li>
+                            <li>The amount of any insurance purchased</li>
+                        </ul>
+                        <p>We are not liable for consequential, incidental, or special damages.</p>
+                    </div>
+                    <div class="terms-section">
+                        <h3>6. Claims Process</h3>
+                        <p>Damage or loss claims must be filed within 30 days of delivery (or expected delivery date for
+                            lost shipments). Required documentation includes:</p>
+                        <ul>
+                            <li>Original shipping receipt</li>
+                            <li>Proof of value</li>
+                            <li>Photos of damaged items and packaging</li>
+                        </ul>
+                    </div>
+                    <div class="terms-section">
+                        <h3>7. Governing Law</h3>
+                        <p>These Terms shall be governed by the laws of the State of Delaware without regard to its
+                            conflict of law provisions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section id="privacy" class="section">
+            <div class="page-container">
+                <div class="page-header">
+                    <h2>Privacy Policy</h2>
+                    <p>Effective Date: January 1, 2023</p>
+                </div>
+                <div class="page-content">
+                    <div class="privacy-section">
+                        <h3>1. Information We Collect</h3>
+                        <p>We collect several types of information to provide and improve our services:</p>
+                        <ul>
+                            <li><strong>Personal Information:</strong> Name, address, email, phone number, payment
+                                information</li>
+                            <li><strong>Shipping Information:</strong> Package contents, dimensions, weight, tracking
+                                data</li>
+                            <li><strong>Device Information:</strong> IP address, browser type, operating system</li>
+                            <li><strong>Usage Data:</strong> Pages visited, features used, time spent on site</li>
+                        </ul>
+                    </div>
+                    <div class="privacy-section">
+                        <h3>2. How We Use Your Information</h3>
+                        <p>Your information is used for the following purposes:</p>
+                        <ul>
+                            <li>To provide and maintain our services</li>
+                            <li>To process shipments and payments</li>
+                            <li>To notify you about shipment status</li>
+                            <li>To improve our services and develop new features</li>
+                            <li>To prevent fraud and ensure security</li>
+                            <li>To comply with legal obligations</li>
+                        </ul>
+                    </div>
+                    <div class="privacy-section">
+                        <h3>3. Data Sharing and Disclosure</h3>
+                        <p>We may share your information with:</p>
+                        <ul>
+                            <li>Carriers and delivery partners to fulfill shipments</li>
+                            <li>Payment processors to complete transactions</li>
+                            <li>Government authorities when required by law</li>
+                            <li>Service providers who assist in our operations</li>
+                        </ul>
+                        <p>We do not sell your personal information to third parties.</p>
+                    </div>
+                    <div class="privacy-section">
+                        <h3>4. Data Security</h3>
+                        <p>We implement appropriate technical and organizational measures to protect your data,
+                            including:</p>
+                        <ul>
+                            <li>Encryption of sensitive data in transit and at rest</li>
+                            <li>Regular security audits and testing</li>
+                            <li>Access controls and authentication measures</li>
+                            <li>Employee training on data protection</li>
+                        </ul>
+                    </div>
+                    <div class="privacy-section">
+                        <h3>5. Your Rights</h3>
+                        <p>Depending on your jurisdiction, you may have the right to:</p>
+                        <ul>
+                            <li>Access your personal data</li>
+                            <li>Request correction of inaccurate data</li>
+                            <li>Request deletion of your data</li>
+                            <li>Restrict or object to processing</li>
+                            <li>Data portability</li>
+                            <li>Withdraw consent</li>
+                        </ul>
+                        <p>To exercise these rights, please contact our Data Protection Officer at
+                            privacy@sahelcargo.com.</p>
+                    </div>
+                    <div class="privacy-section">
+                        <h3>6. International Data Transfers</h3>
+                        <p>As an international shipping service, your data may be transferred to and processed in
+                            countries outside your own. We ensure such transfers comply with applicable data protection
+                            laws.</p>
+                    </div>
+                    <div class="privacy-section">
+                        <h3>7. Changes to This Policy</h3>
+                        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by
+                            posting the new policy on this page and updating the effective date.</p>
+                    </div>
+                    <div class="privacy-section">
+                        <h3>8. Contact Us</h3>
+                        <p>For questions about this Privacy Policy, please contact:</p>
+                        <address>
+                            Sahel Cargo Network<br>
+                            Attn: Privacy Officer<br>
+                            123 Logistics Way<br>
+                            Wilmington, DE 19801<br>
+                            Email: privacy@sahelcargo.com<br>
+                            Phone: +1 (302) 555-0100
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>Your trusted partner for package tracking and delivery management.</p>
+                <div class="footer-logo">
+                    <img width="230" height="230" src="./assets/4.png" alt="shiptracker">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#tracking">Track Package</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sahel cargo network. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+
+                // Close other open items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+
+        // Animated Stats Counter
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const suffix = stat.textContent.includes('%') ? '%' : '';
+                const duration = 2000; // Animation duration in ms
+                const start = 0;
+                const increment = target / (duration / 16); // 60fps
+
+                let current = start;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        current = target;
+                    }
+
+                    if (suffix === '%') {
+                        stat.textContent = current.toFixed(1) + suffix;
+                    } else {
+                        stat.textContent = Math.floor(current) + suffix;
+                    }
+                }, 16);
+            });
+        }
+
+        // Run when stats are in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stats-bar').forEach(bar => {
+            observer.observe(bar);
+        });
+    </script>
+</body>
+
+</html>

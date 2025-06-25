@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahel cargo network</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" sizes="36x36" href="./assets/4.png" type="image/x-icon">
+</head>
+
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img width="230" height="230" src="./assets/4.png" alt="shiptracker">
+            </div>
+            <ul class="nav-menu ">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-section="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tracking" class="nav-link" data-section="tracking">Track Package</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#faq" class="nav-link" data-section="faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#help" class="nav-link" data-section="help">Help Center</a>
+                </li>
+            </ul>
+            <a style="color: #ffffff;" href="#contact" class="btn btn-primary text-white" data-section="contact">Contact
+                Us</a>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+
+        <!-- Tracking Section -->
+        <section style="margin-top: 50px;" id="tracking" class="section">
+            <div class="tracking-container">
+                <div class="tracking-header">
+                    <h2>Track Your Package</h2>
+                    <p>Enter your tracking code to get the latest updates</p>
+                </div>
+
+                <div class="tracking-form">
+                    <div class="input-group">
+                        <input type="text" id="trackingInput" placeholder="Enter tracking code (e.g., Bu7890XYpp)"
+                            class="tracking-input">
+                        <button style="background-color: #ff5c02; color: #fff;" id="trackButton" class="btn btn-">Track
+                            Package</button>
+                    </div>
+                    <div class="sample-codes">
+                        <p>Try sample codes:
+                            <span class="sample-code" onclick="trackSample('TRACK123')">TRACK123</span> or
+                            <span class="sample-code" onclick="trackSample('TRACK456')">TRACK456</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="trackingResult" class="tracking-result hidden">
+                    <div id="errorMessage" class="error-message hidden">
+                        <span class="error-icon">❌</span>
+                        <span id="errorText"></span>
+                    </div>
+
+                    <div id="packageDetails" class="package-details hidden">
+                        <h3>🚚 Shipping Details</h3>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Description:</span>
+                                <span id="packageDescription" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Origin:</span>
+                                <span id="packageOrigin" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Destination:</span>
+                                <span id="packageDestination" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Estimated Delivery:</span>
+                                <span id="packageDelivery" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Current Location:</span>
+                                <span id="packageLocation" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Notes:</span>
+                                <span id="packageNotes" class="detail-value"></span>
+                            </div>
+                        </div>
+                        <h3 style="margin-top: 30px;">📋 Package Details</h3>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Weight:</span>
+                                <span id="packageWeight" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Dimensions:</span>
+                                <span id="packageDimensions" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Contents:</span>
+                                <span id="packageContents" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Shipping Cost:</span>
+                                <span id="packageShippingCost" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Total Paid:</span>
+                                <span id="packageTotalPaid" class="detail-value"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="progressSection" class="progress-section hidden">
+                        <h3>🚚 Shipment Progress</h3>
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                        <div class="progress-steps">
+                            <div class="step" data-step="0">
+                                <div class="step-circle"></div>
+                                <span class="step-label">Dispatched</span>
+                            </div>
+                            <div class="step" data-step="1">
+                                <div class="step-circle"></div>
+                                <span class="step-label">In Transit</span>
+                            </div>
+                            <div class="step" data-step="2">
+                                <div class="step-circle"></div>
+                                <span class="step-label">At Customs</span>
+                            </div>
+                            <div class="step" data-step="3">
+                                <div class="step-circle"></div>
+                                <span class="step-label">Out for Delivery</span>
+                            </div>
+                            <div class="step" data-step="4">
+                                <div class="step-circle"></div>
+                                <span class="step-label">Delivered</span>
+                            </div>
+                        </div>
+                        <!-- <div class="progress-steps">
+                            <div class="step" data-step="0">
+                                <div class="step-circle"></div>
+                                <span class="step-label">📦 Dispatched</span>
+                            </div>
+                            <div class="step" data-step="1">
+                                <div class="step-circle"></div>
+                                <span class="step-label">🚚 In Transit</span>
+                            </div>
+                            <div class="step" data-step="2">
+                                <div class="step-circle"></div>
+                                <span class="step-label">🛂 At Customs</span>
+                            </div>
+                            <div class="step" data-step="3">
+                                <div class="step-circle"></div>
+                                <span class="step-label">🏠 Out for Delivery</span>
+                            </div>
+                            <div class="step" data-step="4">
+                                <div class="step-circle"></div>
+                                <span class="step-label">✅ Delivered</span>
+                            </div>
+                        </div> -->
+
+                        <div class="tracking-history">
+                            <h4>📍 Tracking History</h4>
+                            <div id="historyList" class="history-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>Your trusted partner for package tracking and delivery management.</p>
+                <div class="footer-logo">
+                    <img width="230" height="230" src="./assets/4.png" alt="shiptracker">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#tracking">Track Package</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sahel cargo network. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+
+                // Close other open items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+
+        // Animated Stats Counter
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const suffix = stat.textContent.includes('%') ? '%' : '';
+                const duration = 2000; // Animation duration in ms
+                const start = 0;
+                const increment = target / (duration / 16); // 60fps
+
+                let current = start;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        current = target;
+                    }
+
+                    if (suffix === '%') {
+                        stat.textContent = current.toFixed(1) + suffix;
+                    } else {
+                        stat.textContent = Math.floor(current) + suffix;
+                    }
+                }, 16);
+            });
+        }
+
+        // Run when stats are in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stats-bar').forEach(bar => {
+            observer.observe(bar);
+        });
+    </script>
+</body>
+
+</html>
