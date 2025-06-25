@@ -69,6 +69,8 @@
         "progress": [
             {"status": "Dispatched", "date": "2025-06-22", "location": "Detroit, USA"},
             {"status": "In Transit", "date": "2025-06-24", "location": "Dallas, USA"},
+            {"status": "In Transit", "date": "2025-06-25", "location": "Monterrey, Mexico"},
+            {"status": "In Transit", "date": "2025-06-25", "location": "Monterrey, Mexico"},
             {"status": "In Transit", "date": "2025-06-25", "location": "Monterrey, Mexico"}
         ]
     },

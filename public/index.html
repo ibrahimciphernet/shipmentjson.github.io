@@ -317,6 +317,7 @@
 
 .steps-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     /* max-width: 1200px; */
     /* margin: 0 auto; */
@@ -516,7 +517,10 @@
 
 .stat-number {
     animation: countUp 1s ease forwards;
-} */
+} 
+
+/* ========================= */
+
 </style>
 
 <body>
@@ -596,8 +600,10 @@
         <section id="home" class="section active">
             <!-- Hero Section with Background Image -->
             <div class="hero">
+                
                 <div class="hero-content">
-                    <h1 class="hero-title">Sahel Global Shipping & Logistics Solutions</h1>
+                    <br>
+                    <h1 style="width: 100%;" class="hero-title"> Global Shipping <br>& Logistics Solutions</h1>
                     <p class="hero-subtitle">Real-time tracking, reliable delivery, and complete supply chain visibility
                         across 150+ countries</p>
                     <div class="hero-buttons">
@@ -605,6 +611,10 @@
                         <button style="background-color: #fff; color: #2563eb;" class="btn btn-secondary" onclick="showSection('contact')">Get a Quote</button>
                     </div>
                 </div>
+                
+               
+                 <img style=" border-radius: 10px;" width="100%" height="auto" src="/public/assets/334.jpg" alt="">
+             
             </div>
 
             <!-- Stats Bar -->
@@ -831,7 +841,7 @@
                     <p>Get a free quote today and experience world-class logistics services</p>
                     <div class="cta-buttons">
                         <button class="btn btn-primary" onclick="showSection('contact')">Request Quote</button>
-                        <button class="btn btn-secondary">Call Us: +1 (800) 555-SHIP</button>
+                        <button style="color: #fff;" class="btn btn-secondary">Call Us: +1 (800) 555-SHIP</button>
                     </div>
                 </div>
             </div>
@@ -976,6 +986,13 @@
                     </div>
                 </div>
             </div>
+<br>
+<br>
+              <div style="padding: 50px;" class="support-contact">
+                        <h1>Need more help?</h1>
+                        <p style="font-size: 20px;">Our customer support team is available 24/7 to assist you with <br>any questions or concerns.</p>
+                        <a style="color: #fff;" href="#contact" class="btn btn-primary">Contact Support</a>
+                    </div>
         </section>
 
         <!-- Contact Section -->
@@ -1085,10 +1102,10 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="support-contact">
-                        <h3>Need more help?</h3>
-                        <p>Our customer support team is available 24/7 to assist you with any questions or concerns.</p>
-                        <a href="#contact" class="btn btn-primary">Contact Support</a>
+                    <div style="padding: 50px;" class="support-contact">
+                        <h1>Need more help?</h1>
+                        <p style="font-size: 20px;">Our customer support team is available 24/7 to assist you with <br>any questions or concerns.</p>
+                        <a style="color: #fff;" href="#contact" class="btn btn-primary">Contact Support</a>
                     </div>
                 </div>
             </div>
